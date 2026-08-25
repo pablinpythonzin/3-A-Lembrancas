@@ -1,0 +1,11 @@
+Ícones próprios usados no fundo flutuante da página web
+(misturados com os ícones SVG, sorteados aleatoriamente):
+
+  coracao.png
+  html-icon.webp
+  sala-do-futuro.png
+  ita.png
+  presente-removebg-preview.png
+
+Referenciados em web/script.js (array ICONES_IMG). Pra trocar algum,
+salve com o mesmo nome ou ajuste o caminho no script.js.

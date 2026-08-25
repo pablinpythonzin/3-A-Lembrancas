@@ -1,0 +1,10 @@
+Coloque aqui o vídeo/música de comemoração com o nome:
+
+  musica-comemoracao.mp4
+
+Formato .mp4 é o mais compatível com navegadores. Se seu arquivo
+vier em outro formato (.webm, .mkv etc.), converta pra .mp4 antes
+(qualquer conversor online resolve).
+
+Sem o arquivo, a tela de comemoração mostra um aviso no lugar do
+vídeo — não quebra o resto da página.

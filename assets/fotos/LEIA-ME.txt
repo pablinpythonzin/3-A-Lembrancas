@@ -1,0 +1,6 @@
+Coloque aqui a foto que vai virar lembrança no README do repositório
+com o nome:
+
+  foto-turma.jpg
+
+Pode ser uma foto da turma, da professora, ou do momento do convite.

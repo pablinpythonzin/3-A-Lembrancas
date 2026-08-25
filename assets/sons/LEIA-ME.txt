@@ -1,0 +1,25 @@
+Sons usados na comemoração (versão web):
+
+  fogos1.mp3 até fogos7.mp3   → estouram em sequência (um a cada 0,4s),
+                                 junto com o vídeo, cortando tudo em ~3s.
+                                 Só o fogos1.mp3 foi adicionado até agora;
+                                 sem os outros 6, só ele toca — nada quebra.
+                                 O volume desses é amplificado via Web Audio
+                                 (mais alto que o máximo normal do navegador).
+
+  boom.mp3 + bruh.mp3          → toca boom e, 0,8s depois, bruh, toda vez
+                                 que alguém tenta pegar o botão fujão
+                                 (o verde "SIM!") e ele foge. (já adicionados)
+
+  fah.mp3                      → toca 1,6s depois do boom (ou seja, 0,8s
+                                 depois do bruh, sem sobrepor), só a cada
+                                 2ª tentativa de fuga. (já adicionado)
+
+Sem os arquivos, a página simplesmente não toca nada nesses pontos —
+nada quebra.
+
+IMPORTANTE: confira que o arquivo é realmente um MP3/MP4 com áudio de
+verdade, e não um MP4 "fake" (alguns conversores geram um .mp4 que na
+real é só o áudio com tela preta — isso já aconteceu com o
+musica-comemoracao.mp4). Se o arquivo pesar poucos KB por segundo de
+duração, provavelmente está certo (áudio puro mesmo).
