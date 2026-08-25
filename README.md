@@ -38,9 +38,9 @@ Duas versões equivalentes:
    botão "SIM!" e ele foge. A cada 2ª tentativa, toca também
    [`assets/sons/fah.mp3`](assets/sons/) mais 0,8s depois, sem sobrepor.
 6. **Fogos de artifício** (opcional, só na versão web) em
-   [`assets/sons/fogos1.mp3`](assets/sons/) até `fogos7.mp3` — estouram em
-   sequência (uma faixa a cada 0,4s) junto com o vídeo, cortando tudo em
-   ~3s. Só o `fogos1.mp3` foi adicionado até agora; os outros são opcionais.
+   [`assets/sons/fogos1.mp3`](assets/sons/) — o mesmo arquivo é disparado
+   7 vezes em sequência (uma a cada 0,8s) junto com o vídeo, com o volume
+   amplificado via Web Audio.
 
 > ⚠️ Ao baixar o vídeo/áudio de comemoração, confira que o arquivo tem
 > mesmo imagem (vídeo), não só o áudio disfarçado de `.mp4` — já aconteceu
@@ -59,10 +59,10 @@ Duas versões equivalentes:
   sutis e um cartão com detalhe verde/dourado — só na versão web. Todos
   os ícones da versão web são SVG (nenhum emoji).
 - Ao aceitar: cai confete, mostra mensagem de comemoração, o vídeo de
-  comemoração toca com os fogos de artifício (várias faixas em sequência,
-  bem mais altos que o normal) por cima nos primeiros segundos, e a
-  galeria de GIFs aparece. O botão "Ver de novo" volta pra tela inicial e
-  para a música.
+  comemoração toca com os fogos de artifício (o mesmo som disparado 7x em
+  sequência, bem mais alto que o normal) por cima nos primeiros segundos,
+  e a galeria de GIFs aparece. O botão "Ver de novo" volta pra tela
+  inicial e para a música.
 - A versão Python toca um "tim-tim" de vitória (Windows) e também tem
   confete animado em `Canvas`, sem depender de nenhuma biblioteca externa.
   (Ainda usa emoji nos textos e o esquema original de botões — não foi

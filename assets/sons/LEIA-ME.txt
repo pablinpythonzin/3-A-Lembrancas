@@ -1,11 +1,10 @@
 Sons usados na comemoração (versão web):
 
-  fogos1.mp3 até fogos7.mp3   → estouram em sequência (um a cada 0,4s),
-                                 junto com o vídeo, cortando tudo em ~3s.
-                                 Só o fogos1.mp3 foi adicionado até agora;
-                                 sem os outros 6, só ele toca — nada quebra.
-                                 O volume desses é amplificado via Web Audio
-                                 (mais alto que o máximo normal do navegador).
+  fogos1.mp3                   → o mesmo arquivo é disparado 7 vezes em
+                                 sequência (uma a cada 0,8s), junto com o
+                                 vídeo. O volume é amplificado via Web
+                                 Audio (mais alto que o máximo normal do
+                                 navegador). Só precisa desse um arquivo.
 
   boom.mp3 + bruh.mp3          → toca boom e, 0,8s depois, bruh, toda vez
                                  que alguém tenta pegar o botão fujão

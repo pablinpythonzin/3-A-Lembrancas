@@ -213,18 +213,12 @@ const btnDeNovo = document.getElementById('btn-de-novo');
 const CAMINHO_MUSICA = '../assets/musica/musica-comemoracao.mp4';
 const playerMusica = document.getElementById('player-musica');
 
-// ===== Fogos de artifício (várias faixas em sequência, mais altas) =====
-const CAMINHOS_FOGOS = [
-  '../assets/sons/fogos1.mp3',
-  '../assets/sons/fogos2.mp3',
-  '../assets/sons/fogos3.mp3',
-  '../assets/sons/fogos4.mp3',
-  '../assets/sons/fogos5.mp3',
-  '../assets/sons/fogos6.mp3',
-  '../assets/sons/fogos7.mp3',
-];
-const INTERVALO_FOGOS_MS = 400; // espaçamento entre o início de cada estouro
-const DURACAO_FOGOS_MS = 3000; // corta tudo nesse limite, mesmo que ainda esteja tocando
+// ===== Fogos de artifício (mesmo áudio disparado 7x em sequência) =====
+const CAMINHO_FOGOS = '../assets/sons/fogos1.mp3';
+const QTD_FOGOS = 7;
+const INTERVALO_FOGOS_MS = 800; // espaçamento entre o início de cada disparo
+const BUFFER_FINAL_MS = 2000; // tempo extra pro último disparo terminar de tocar
+const DURACAO_FOGOS_MS = (QTD_FOGOS - 1) * INTERVALO_FOGOS_MS + BUFFER_FINAL_MS;
 const GANHO_FOGOS = 1.8; // amplificação além do volume máximo normal (Web Audio)
 
 let audioCtx = null;
@@ -240,9 +234,9 @@ let timersFogos = [];
 function tocarFogos() {
   const ctx = contextoAudio();
 
-  CAMINHOS_FOGOS.forEach((caminho, i) => {
+  for (let i = 0; i < QTD_FOGOS; i++) {
     const id = setTimeout(() => {
-      const audio = new Audio(caminho);
+      const audio = new Audio(CAMINHO_FOGOS);
       try {
         const fonte = ctx.createMediaElementSource(audio);
         const ganho = ctx.createGain();
@@ -255,7 +249,7 @@ function tocarFogos() {
       fogosAtivos.push(audio);
     }, i * INTERVALO_FOGOS_MS);
     timersFogos.push(id);
-  });
+  }
 
   const idParar = setTimeout(pararFogos, DURACAO_FOGOS_MS);
   timersFogos.push(idParar);
