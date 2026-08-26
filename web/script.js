@@ -61,6 +61,42 @@ const ATRASO_MS = 800; // mesmo atraso usado entre todos os áudios de zoeira
 let ultimaZoeira = 0;
 let tentativasFuga = 0;
 
+// ===== Imagem de zoeira que aparece junto com o boom =====
+const IMAGENS_ZOEIRA = [
+  '../assets/zoeira/zoeira.jpg',
+  '../assets/zoeira/zoeira1.jpg',
+  '../assets/zoeira/zoeira2.jpg',
+  '../assets/zoeira/zoeira3.jpg',
+  '../assets/zoeira/zoeira4.jpg',
+  '../assets/zoeira/zoeira5.jpg',
+];
+const CANTOS_ZOEIRA = [
+  { top: '20px', left: '20px', right: '', bottom: '' },
+  { top: '20px', right: '20px', left: '', bottom: '' },
+  { bottom: '20px', left: '20px', top: '', right: '' },
+  { bottom: '20px', right: '20px', top: '', left: '' },
+];
+const imgZoeira = document.getElementById('zoeira-imagem');
+let timeoutImgZoeira = null;
+
+function mostrarImagemZoeira() {
+  const imagem = IMAGENS_ZOEIRA[Math.floor(Math.random() * IMAGENS_ZOEIRA.length)];
+  const canto = CANTOS_ZOEIRA[Math.floor(Math.random() * CANTOS_ZOEIRA.length)];
+
+  imgZoeira.src = imagem;
+  imgZoeira.style.top = canto.top;
+  imgZoeira.style.bottom = canto.bottom;
+  imgZoeira.style.left = canto.left;
+  imgZoeira.style.right = canto.right;
+
+  imgZoeira.classList.remove('visivel');
+  void imgZoeira.offsetWidth; // força reflow pra reiniciar o fade mesmo se já estava aparecendo
+  imgZoeira.classList.add('visivel');
+
+  clearTimeout(timeoutImgZoeira);
+  timeoutImgZoeira = setTimeout(() => imgZoeira.classList.remove('visivel'), 1100);
+}
+
 function tocarZoeira() {
   const agora = Date.now();
   if (agora - ultimaZoeira < 1200) return; // evita som picotado em movimentos muito rápidos
@@ -68,6 +104,7 @@ function tocarZoeira() {
   tentativasFuga++;
 
   new Audio(CAMINHO_BOOM).play().catch(() => {});
+  mostrarImagemZoeira();
   setTimeout(() => {
     new Audio(CAMINHO_BRUH).play().catch(() => {});
   }, ATRASO_MS);

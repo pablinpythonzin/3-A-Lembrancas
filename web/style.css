@@ -253,6 +253,21 @@ h1 {
   display: none;
 }
 
+.zoeira-imagem {
+  position: fixed;
+  width: clamp(160px, 22vw, 320px);
+  z-index: 70;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  border-radius: 14px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+
+.zoeira-imagem.visivel {
+  opacity: 1;
+}
+
 .player-musica {
   position: relative;
   width: 100%;

@@ -41,6 +41,9 @@ Duas versões equivalentes:
    [`assets/sons/fogos1.mp3`](assets/sons/) — o mesmo arquivo é disparado
    7 vezes em sequência (uma a cada 0,8s) junto com o vídeo, com o volume
    amplificado via Web Audio.
+7. **Imagens de zoeira** (já adicionadas, só na versão web) em
+   [`assets/zoeira/`](assets/zoeira/) — uma delas aparece com fade-in numa
+   beirada aleatória da tela toda vez que o botão fujão foge.
 
 > ⚠️ Ao baixar o vídeo/áudio de comemoração, confira que o arquivo tem
 > mesmo imagem (vídeo), não só o áudio disfarçado de `.mp4` — já aconteceu
@@ -51,9 +54,10 @@ Duas versões equivalentes:
 
 - Tela de convite com pergunta e dois botões.
 - O botão fujão foge quando o mouse chega perto (não precisa nem encostar),
-  com boom + bruh tocando a cada fuga, e um fah extra a cada 2ª tentativa
-  (versão web — na versão Python é sempre o "Não" que foge, sem som de
-  zoeira).
+  com boom + bruh tocando a cada fuga (e um fah extra a cada 2ª tentativa),
+  junto com uma imagem de zoeira surgindo com fade-in numa beirada da tela
+  (versão web — na versão Python é sempre o "Não" que foge, sem som nem
+  imagem de zoeira).
 - Fundo com ícones flutuando em tamanho médio (SVG temáticos + imagens
   próprias em [`assets/icones/`](assets/icones/)), listras douradas
   sutis e um cartão com detalhe verde/dourado — só na versão web. Todos
@@ -83,5 +87,6 @@ Duas versões equivalentes:
     ├── fotos/            → foto lembrança (usada no README raiz)
     ├── icones/           → imagens próprias do fundo flutuante (só web)
     ├── musica/           → vídeo local que toca ao aceitar
-    └── sons/             → boom/bruh/fah (zoeira) e fogos1-7 (comemoração)
+    ├── sons/             → boom/bruh/fah (zoeira) e fogos1 (comemoração)
+    └── zoeira/           → imagens que piscam na tela a cada fuga (só web)
 ```

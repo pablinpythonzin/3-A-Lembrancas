@@ -1,0 +1,10 @@
+Imagens de zoeira usadas na tela inicial (versão web):
+
+  zoeira.jpg, zoeira1.jpg, zoeira2.jpg, zoeira3.jpg, zoeira4.jpg, zoeira5.jpg
+
+Toda vez que o botão fujão ("SIM!") foge de alguém tentando clicar,
+uma dessas imagens é sorteada e aparece com fade-in numa das quatro
+beiradas da tela (também sorteada), bem grande, sumindo sozinha logo
+em seguida. Já estão todas adicionadas.
+
+Referenciadas em web/script.js (array IMAGENS_ZOEIRA).
