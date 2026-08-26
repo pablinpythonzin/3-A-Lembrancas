@@ -1,19 +1,12 @@
-Coloque aqui seus GIFs de comemoração com EXATAMENTE estes nomes
-(pode baixar do Giphy, Tenor, ou usar GIFs seus):
+GIFs de comemoração usados na versão web, fixos nas beiradas da tela
+(2 na esquerda, 2 na direita — some em telas estreitas):
 
-  bread-cat.gif
-  
-  hello-human.gif
-  
-  dog_dacing.gif
-  
-  party.gif
+  party.gif          → esquerda, em cima
+  dog_dacing.gif      → esquerda, embaixo
+  cat-meme.gif         → direita, em cima
+  cat-cat-meme.gif      → direita, embaixo
 
-Enquanto os arquivos não existirem, a página web mostra um emoji
+Enquanto algum arquivo não existir, a página web mostra um ícone SVG
 no lugar (não quebra o layout). O Python usa os mesmos arquivos.
 
 Dica: prefira GIFs pequenos (menos de 3-4 MB cada) para carregar rápido.
-
-Atenção: hello-human.gif está com 18 MB, bem pesado pra um GIF
-decorativo pequeno — vale comprimir (ex: ezgif.com/optimize) se a
-página estiver demorando pra carregar.

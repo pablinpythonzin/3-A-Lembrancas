@@ -23,9 +23,10 @@ Duas versões equivalentes:
    - `[CURSO]`
 2. **Adicione GIFs de comemoração** (opcional, mas deixa muito mais divertido):
    coloque os arquivos em [`assets/gifs/`](assets/gifs/) — os nomes usados
-   hoje são `party.gif`, `bread-cat.gif`, `dog_dacing.gif` e `hello-human.gif`
-   (veja o `LEIA-ME.txt` da pasta). Sem os arquivos, a página mostra um
-   emoji no lugar — nada quebra.
+   hoje são `party.gif`, `dog_dacing.gif`, `cat-meme.gif` e `cat-cat-meme.gif`
+   (veja o `LEIA-ME.txt` da pasta). Ficam fixos nas beiradas da tela (2 na
+   esquerda, 2 na direita) e somem em telas estreitas. Sem os arquivos, a
+   página mostra um ícone no lugar — nada quebra.
 3. **Adicione uma foto lembrança** em [`assets/fotos/foto-turma.jpg`](assets/fotos/)
    — ela é usada no README principal do repositório (veja a raiz do projeto).
 4. **Adicione um vídeo/música de comemoração** (opcional, só na versão web)
@@ -44,6 +45,9 @@ Duas versões equivalentes:
 7. **Imagens de zoeira** (já adicionadas, só na versão web) em
    [`assets/zoeira/`](assets/zoeira/) — uma delas aparece com fade-in numa
    beirada aleatória da tela toda vez que o botão fujão foge.
+8. **Susto do FNAF** (já adicionado, só na versão web) em
+   [`assets/sons/fnaf.mp3`](assets/sons/) — toca assim que a tela de
+   comemoração aparece, ao aceitar.
 
 > ⚠️ Ao baixar o vídeo/áudio de comemoração, confira que o arquivo tem
 > mesmo imagem (vídeo), não só o áudio disfarçado de `.mp4` — já aconteceu
@@ -62,11 +66,11 @@ Duas versões equivalentes:
   próprias em [`assets/icones/`](assets/icones/)), listras douradas
   sutis e um cartão com detalhe verde/dourado — só na versão web. Todos
   os ícones da versão web são SVG (nenhum emoji).
-- Ao aceitar: cai confete, mostra mensagem de comemoração, o vídeo de
-  comemoração toca com os fogos de artifício (o mesmo som disparado 7x em
-  sequência, bem mais alto que o normal) por cima nos primeiros segundos,
-  e a galeria de GIFs aparece. O botão "Ver de novo" volta pra tela
-  inicial e para a música.
+- Ao aceitar: toca o susto do FNAF, cai confete, mostra mensagem de
+  comemoração, o vídeo de comemoração toca com os fogos de artifício (o
+  mesmo som disparado 7x em sequência, bem mais alto que o normal) por
+  cima nos primeiros segundos, e os 4 GIFs aparecem fixos nas beiradas da
+  tela. O botão "Ver de novo" volta pra tela inicial e para tudo.
 - A versão Python toca um "tim-tim" de vitória (Windows) e também tem
   confete animado em `Canvas`, sem depender de nenhuma biblioteca externa.
   (Ainda usa emoji nos textos e o esquema original de botões — não foi
@@ -87,6 +91,6 @@ Duas versões equivalentes:
     ├── fotos/            → foto lembrança (usada no README raiz)
     ├── icones/           → imagens próprias do fundo flutuante (só web)
     ├── musica/           → vídeo local que toca ao aceitar
-    ├── sons/             → boom/bruh/fah (zoeira) e fogos1 (comemoração)
+    ├── sons/             → boom/bruh/fah (zoeira), fogos1 e fnaf (comemoração)
     └── zoeira/           → imagens que piscam na tela a cada fuga (só web)
 ```

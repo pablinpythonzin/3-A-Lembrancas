@@ -250,6 +250,22 @@ const btnDeNovo = document.getElementById('btn-de-novo');
 const CAMINHO_MUSICA = '../assets/musica/musica-comemoracao.mp4';
 const playerMusica = document.getElementById('player-musica');
 
+// ===== Susto do FNAF ao entrar na tela de comemoração =====
+const CAMINHO_FNAF = '../assets/sons/fnaf.mp3';
+let audioFnaf = null;
+
+function tocarFnaf() {
+  audioFnaf = new Audio(CAMINHO_FNAF);
+  audioFnaf.play().catch(() => {});
+}
+
+function pararFnaf() {
+  if (!audioFnaf) return;
+  audioFnaf.pause();
+  audioFnaf.currentTime = 0;
+  audioFnaf = null;
+}
+
 // ===== Fogos de artifício (mesmo áudio disparado 7x em sequência) =====
 const CAMINHO_FOGOS = '../assets/sons/fogos1.mp3';
 const QTD_FOGOS = 7;
@@ -332,6 +348,7 @@ function comemorar() {
   setTimeout(criarConfete, 1800);
   tocarMusica();
   tocarFogos();
+  tocarFnaf();
 }
 
 function voltarInicio() {
@@ -340,6 +357,7 @@ function voltarInicio() {
   posicionado = false;
   pararMusica();
   pararFogos();
+  pararFnaf();
 }
 
 btnAceitar.addEventListener('click', comemorar);

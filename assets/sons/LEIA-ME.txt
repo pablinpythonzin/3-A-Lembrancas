@@ -14,6 +14,10 @@ Sons usados na comemoração (versão web):
                                  depois do bruh, sem sobrepor), só a cada
                                  2ª tentativa de fuga. (já adicionado)
 
+  fnaf.mp3                     → toca assim que a tela de comemoração
+                                 aparece (ao clicar em "Não", que é quem
+                                 realmente aceita). (já adicionado)
+
 Sem os arquivos, a página simplesmente não toca nada nesses pontos —
 nada quebra.
 

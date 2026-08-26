@@ -243,7 +243,7 @@ class ConviteApp:
         gifs_frame = tk.Frame(self.container, bg="#12241c")
         gifs_frame.pack()
 
-        nomes_gifs = ["party.gif", "bread-cat.gif", "dog_dacing.gif", "hello-human.gif"]
+        nomes_gifs = ["party.gif", "dog_dacing.gif", "cat-meme.gif", "cat-cat-meme.gif"]
 
         self._gifs = []
         for i, nome_arquivo in enumerate(nomes_gifs):
