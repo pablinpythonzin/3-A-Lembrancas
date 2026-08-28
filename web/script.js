@@ -99,7 +99,6 @@ function tocarZoeira() {
   const agora = Date.now();
   if (agora - ultimaZoeira < 1200) return; // evita som picotado em movimentos muito rápidos
   ultimaZoeira = agora;
-  tentativasFuga++;
 
   new Audio(CAMINHO_BOOM).play().catch(() => {});
   mostrarImagemZoeira();
