@@ -349,6 +349,60 @@ h1 {
   opacity: 0.75;
 }
 
+.mensagens-turma {
+  margin: 26px 0;
+}
+
+.titulo-mensagens {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 14px;
+}
+
+.mensagens-lista {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 4px 4px 12px;
+  scroll-snap-type: x mandatory;
+}
+
+.mensagens-lista::-webkit-scrollbar {
+  height: 6px;
+}
+
+.mensagens-lista::-webkit-scrollbar-thumb {
+  background: rgba(217, 178, 92, 0.4);
+  border-radius: 10px;
+}
+
+.mensagem-card {
+  flex: 0 0 auto;
+  width: 170px;
+  scroll-snap-align: start;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(217, 178, 92, 0.25);
+  border-radius: 14px;
+  padding: 14px;
+  text-align: left;
+}
+
+.mensagem-card .nome {
+  font-weight: 700;
+  color: var(--dourado-claro);
+  font-size: 0.92rem;
+  margin-bottom: 6px;
+}
+
+.mensagem-card .frase {
+  font-size: 0.8rem;
+  line-height: 1.45;
+  font-style: italic;
+  opacity: 0.88;
+}
+
 /* os 4 gifs ficam fixos nas beiradas da tela (2 na esquerda, 2 na
    direita) em vez de dentro do cartão — some junto em telas estreitas,
    onde o cartão ocupa quase a largura toda e eles se sobreporiam. */

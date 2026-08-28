@@ -21,6 +21,10 @@ Duas versões equivalentes:
 1. **Troque os placeholders** em `web/index.html` e `python/convite_tkinter.py`:
    - `[NOME DA PROFESSORA]`
    - `[CURSO]`
+   - As 19 mensagens da turma (só na versão web): edite o array
+     `MENSAGENS_TURMA` no topo de `web/script.js` — troque `nome` e
+     `frase` de cada aluno pelos reais. Hoje está genérico
+     (`Aluno 1`, `Aluno 2`...) só pra pré-visualizar o layout.
 2. **Adicione GIFs de comemoração** (opcional, mas deixa muito mais divertido):
    coloque os arquivos em [`assets/gifs/`](assets/gifs/) — os nomes usados
    hoje são `party.gif`, `dog_dacing.gif`, `cat-meme.gif` e `cat-cat-meme.gif`
@@ -73,8 +77,10 @@ Duas versões equivalentes:
 - Ao aceitar: toca o susto do FNAF, cai confete, mostra mensagem de
   comemoração, o vídeo de comemoração toca com os fogos de artifício (o
   mesmo som disparado 7x em sequência, bem mais alto que o normal) por
-  cima nos primeiros segundos, e os 4 GIFs aparecem fixos nas beiradas da
-  tela. O botão "Ver de novo" volta pra tela inicial e para tudo.
+  cima nos primeiros segundos, mostra os cartõezinhos roláveis com
+  mensagem de cada aluno da turma, e os 4 GIFs aparecem fixos nas
+  beiradas da tela. O botão "Ver de novo" volta pra tela inicial e para
+  tudo.
 - A versão Python toca um "tim-tim" de vitória (Windows) e também tem
   confete animado em `Canvas`, sem depender de nenhuma biblioteca externa.
   (Ainda usa emoji nos textos e o esquema original de botões — não foi

@@ -1,3 +1,30 @@
+// ===== Mensagens da turma (troque pelos nomes e frases reais depois) =====
+const MENSAGENS_TURMA = Array.from({ length: 19 }, (_, i) => ({
+  nome: `Aluno ${i + 1}`,
+  frase: 'Obrigado(a), professora [NOME DA PROFESSORA], por cada momento.',
+}));
+
+function montarMensagensTurma() {
+  const lista = document.getElementById('mensagens-lista');
+  MENSAGENS_TURMA.forEach(({ nome, frase }) => {
+    const card = document.createElement('div');
+    card.className = 'mensagem-card';
+
+    const nomeEl = document.createElement('div');
+    nomeEl.className = 'nome';
+    nomeEl.textContent = nome;
+
+    const fraseEl = document.createElement('div');
+    fraseEl.className = 'frase';
+    fraseEl.textContent = frase;
+
+    card.appendChild(nomeEl);
+    card.appendChild(fraseEl);
+    lista.appendChild(card);
+  });
+}
+montarMensagensTurma();
+
 // ===== Fundo com ícones flutuando (SVG, sem emoji) =====
 const floatingBg = document.getElementById('floating-bg');
 
