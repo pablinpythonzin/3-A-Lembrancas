@@ -372,7 +372,7 @@ h1 {
   display: flex;
   gap: 12px;
   width: max-content;
-  animation: rolar-mensagens 45s linear infinite;
+  animation: rolar-mensagens 100s linear infinite;
 }
 
 .mensagens-lista:hover .mensagens-track {

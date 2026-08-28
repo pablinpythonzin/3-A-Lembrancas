@@ -21,10 +21,11 @@ Duas versões equivalentes:
 1. **Troque os placeholders** em `web/index.html` e `python/convite_tkinter.py`:
    - `[NOME DA PROFESSORA]`
    - `[CURSO]`
-   - As 19 mensagens da turma (só na versão web): edite o array
-     `MENSAGENS_TURMA` no topo de `web/script.js` — troque `nome` e
-     `frase` de cada aluno pelos reais. Hoje está genérico
-     (`Aluno 1`, `Aluno 2`...) só pra pré-visualizar o layout.
+   - As 19 mensagens da turma (só na versão web): os nomes já estão
+     certos em `NOMES_TURMA`, no topo de `web/script.js`. A frase de
+     cada um ainda é genérica ("Obrigado(a), professora
+     [NOME DA PROFESSORA], por cada momento.") — pra personalizar,
+     edite o `frase` de cada item em `MENSAGENS_TURMA` logo abaixo.
 2. **Adicione GIFs de comemoração** (opcional, mas deixa muito mais divertido):
    coloque os arquivos em [`assets/gifs/`](assets/gifs/) — os nomes usados
    hoje são `party.gif`, `dog_dacing.gif`, `cat-meme.gif` e `cat-cat-meme.gif`
