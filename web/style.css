@@ -362,31 +362,36 @@ h1 {
 }
 
 .mensagens-lista {
+  overflow: hidden;
+  padding: 4px 0 12px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+.mensagens-track {
   display: flex;
   gap: 12px;
-  overflow-x: auto;
-  padding: 4px 4px 12px;
-  scroll-snap-type: x mandatory;
+  width: max-content;
+  animation: rolar-mensagens 45s linear infinite;
 }
 
-.mensagens-lista::-webkit-scrollbar {
-  height: 6px;
-}
-
-.mensagens-lista::-webkit-scrollbar-thumb {
-  background: rgba(217, 178, 92, 0.4);
-  border-radius: 10px;
+.mensagens-lista:hover .mensagens-track {
+  animation-play-state: paused;
 }
 
 .mensagem-card {
   flex: 0 0 auto;
   width: 170px;
-  scroll-snap-align: start;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(217, 178, 92, 0.25);
   border-radius: 14px;
   padding: 14px;
   text-align: left;
+}
+
+@keyframes rolar-mensagens {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
 }
 
 .mensagem-card .nome {

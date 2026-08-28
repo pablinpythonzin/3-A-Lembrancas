@@ -6,7 +6,12 @@ const MENSAGENS_TURMA = Array.from({ length: 19 }, (_, i) => ({
 
 function montarMensagensTurma() {
   const lista = document.getElementById('mensagens-lista');
-  MENSAGENS_TURMA.forEach(({ nome, frase }) => {
+  const track = document.createElement('div');
+  track.className = 'mensagens-track';
+
+  // a lista entra duas vezes seguidas: assim a animação pode voltar do
+  // meio pro início sem dar nenhum salto visível (loop sem emenda)
+  [...MENSAGENS_TURMA, ...MENSAGENS_TURMA].forEach(({ nome, frase }) => {
     const card = document.createElement('div');
     card.className = 'mensagem-card';
 
@@ -20,8 +25,10 @@ function montarMensagensTurma() {
 
     card.appendChild(nomeEl);
     card.appendChild(fraseEl);
-    lista.appendChild(card);
+    track.appendChild(card);
   });
+
+  lista.appendChild(track);
 }
 montarMensagensTurma();
 
