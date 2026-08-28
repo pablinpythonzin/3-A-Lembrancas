@@ -36,8 +36,7 @@ Duas versões equivalentes:
 5. **Sons de zoeira do botão fujão** (opcional, só na versão web):
    [`assets/sons/boom.mp3`](assets/sons/) e [`assets/sons/bruh.mp3`](assets/sons/)
    — toca o boom e, 0,8s depois, o bruh, toda vez que alguém tenta pegar o
-   botão "SIM!" e ele foge. A cada 2ª tentativa, toca também
-   [`assets/sons/fah.mp3`](assets/sons/) mais 0,8s depois, sem sobrepor.
+   botão "SIM!" e ele foge.
 6. **Fogos de artifício** (opcional, só na versão web) em
    [`assets/sons/fogos1.mp3`](assets/sons/) — o mesmo arquivo é disparado
    7 vezes em sequência (uma a cada 0,8s) junto com o vídeo, com o volume
@@ -58,8 +57,8 @@ Duas versões equivalentes:
 
 - Tela de convite com pergunta e dois botões.
 - O botão fujão foge quando o mouse chega perto (não precisa nem encostar),
-  com boom + bruh tocando a cada fuga (e um fah extra a cada 2ª tentativa),
-  junto com uma imagem de zoeira surgindo com fade-in numa beirada da tela
+  com boom + bruh tocando a cada fuga, junto com uma imagem de zoeira
+  surgindo com fade-in numa beirada da tela
   (versão web — na versão Python é sempre o "Não" que foge, sem som nem
   imagem de zoeira).
 - Fundo com ícones flutuando em tamanho médio (SVG temáticos + imagens
@@ -91,6 +90,6 @@ Duas versões equivalentes:
     ├── fotos/            → foto lembrança (usada no README raiz)
     ├── icones/           → imagens próprias do fundo flutuante (só web)
     ├── musica/           → vídeo local que toca ao aceitar
-    ├── sons/             → boom/bruh/fah (zoeira), fogos1 e fnaf (comemoração)
+    ├── sons/             → boom/bruh (zoeira), fogos1 e fnaf (comemoração)
     └── zoeira/           → imagens que piscam na tela a cada fuga (só web)
 ```

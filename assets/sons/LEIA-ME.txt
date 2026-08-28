@@ -10,10 +10,6 @@ Sons usados na comemoração (versão web):
                                  que alguém tenta pegar o botão fujão
                                  (o verde "SIM!") e ele foge. (já adicionados)
 
-  fah.mp3                      → toca 1,6s depois do boom (ou seja, 0,8s
-                                 depois do bruh, sem sobrepor), só a cada
-                                 2ª tentativa de fuga. (já adicionado)
-
   fnaf.mp3                     → toca assim que a tela de comemoração
                                  aparece (ao clicar em "Não", que é quem
                                  realmente aceita). (já adicionado)

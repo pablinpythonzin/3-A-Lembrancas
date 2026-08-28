@@ -56,10 +56,8 @@ btnFujao.classList.add('btn-fujao');
 
 const CAMINHO_BOOM = '../assets/sons/boom.mp3';
 const CAMINHO_BRUH = '../assets/sons/bruh.mp3';
-const CAMINHO_FAH = '../assets/sons/fah.mp3';
 const ATRASO_MS = 800; // mesmo atraso usado entre todos os áudios de zoeira
 let ultimaZoeira = 0;
-let tentativasFuga = 0;
 
 // ===== Imagem de zoeira que aparece junto com o boom =====
 const IMAGENS_ZOEIRA = [
@@ -108,13 +106,6 @@ function tocarZoeira() {
   setTimeout(() => {
     new Audio(CAMINHO_BRUH).play().catch(() => {});
   }, ATRASO_MS);
-
-  // a cada 2ª tentativa, toca o fah depois do boom+bruh, sem sobrepor
-  if (tentativasFuga % 2 === 0) {
-    setTimeout(() => {
-      new Audio(CAMINHO_FAH).play().catch(() => {});
-    }, ATRASO_MS * 2);
-  }
 }
 
 let posicionado = false;
