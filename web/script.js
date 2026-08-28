@@ -103,10 +103,10 @@ for (let i = 0; i < 26; i++) {
   floatingBg.appendChild(el);
 }
 
-// ===== Botão fujão (inversão: quem foge agora é o "SIM";
-//       quem aceita de verdade é o "Não") =====
-const btnFujao = document.getElementById('btn-sim'); // continua verde, escrito "SIM!", mas foge
-const btnAceitar = document.getElementById('btn-nao'); // continua vermelho, escrito "Não", mas aceita
+// ===== Botão fujão (versão original: quem foge é o "Não";
+//       quem aceita é o "SIM") =====
+const btnFujao = document.getElementById('btn-nao'); // vermelho, escrito "Não", e foge
+const btnAceitar = document.getElementById('btn-sim'); // verde, escrito "SIM!", parado, aceita
 
 btnFujao.classList.add('btn-fujao');
 
