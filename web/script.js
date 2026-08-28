@@ -59,6 +59,23 @@ const CAMINHO_BRUH = '../assets/sons/bruh.mp3';
 const ATRASO_MS = 800; // mesmo atraso usado entre todos os áudios de zoeira
 let ultimaZoeira = 0;
 
+// ===== Tela "toque pra começar": garante um clique de verdade antes de
+//       tudo, pra destravar áudio (mouse passando por cima não conta
+//       como interação real pro navegador) =====
+const telaBloqueio = document.getElementById('tela-bloqueio');
+
+telaBloqueio.addEventListener('click', () => {
+  [CAMINHO_BOOM, CAMINHO_BRUH].forEach((caminho) => {
+    const audio = new Audio(caminho);
+    audio.volume = 0;
+    audio.play().then(() => {
+      audio.pause();
+      audio.currentTime = 0;
+    }).catch(() => {});
+  });
+  telaBloqueio.classList.add('escondido');
+}, { once: true });
+
 // ===== Imagem de zoeira que aparece junto com o boom =====
 const IMAGENS_ZOEIRA = [
   '../assets/zoeira/zoeira.jpg',

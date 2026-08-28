@@ -55,6 +55,11 @@ Duas versões equivalentes:
 
 ## O que cada versão faz
 
+- Versão web: abre com uma tela "Toque pra começar" — não é só estética,
+  é o que garante que o navegador libere áudio desde o primeiro segundo
+  (sem esse clique inicial, sons como boom/bruh ficam mudos até o
+  primeiro clique real na página, porque o navegador não conta "passar o
+  mouse por cima" como interação de verdade).
 - Tela de convite com pergunta e dois botões.
 - O botão fujão foge quando o mouse chega perto (não precisa nem encostar),
   com boom + bruh tocando a cada fuga, junto com uma imagem de zoeira
