@@ -1,14 +1,30 @@
 // ===== Mensagens da turma (troque a frase de cada um quando tiver) =====
-const NOMES_TURMA = [
-  'Arthur', 'Bruna', 'Davy', 'Enzo', 'Felipe', 'Kalleb', 'Laura', 'Luã',
-  'Marcela', 'Matheus Horacio', 'Matheus Rodrigues', 'Murilo', 'Otavio',
-  'Pablo', 'Pedro Fernandes', 'Pedro do Carmo', 'Pietro', 'Steffani', 'Yasmin',
-];
+const FRASE_PADRAO_TURMA = 'Obrigado(a), professora [NOME DA PROFESSORA], por cada momento.';
 
-const MENSAGENS_TURMA = NOMES_TURMA.map((nome) => ({
-  nome,
-  frase: 'Obrigado(a), professora [NOME DA PROFESSORA], por cada momento.',
-}));
+const MENSAGENS_TURMA = [
+  { nome: 'Arthur', frase: FRASE_PADRAO_TURMA },
+  { nome: 'Bruna', frase: FRASE_PADRAO_TURMA },
+  { nome: 'Davy', frase: FRASE_PADRAO_TURMA },
+  { nome: 'Enzo', frase: FRASE_PADRAO_TURMA },
+  { nome: 'Felipe', frase: FRASE_PADRAO_TURMA },
+  { nome: 'Kalleb', frase: FRASE_PADRAO_TURMA },
+  { nome: 'Laura', frase: FRASE_PADRAO_TURMA },
+  { nome: 'Luã', frase: FRASE_PADRAO_TURMA },
+  { nome: 'Marcela', frase: FRASE_PADRAO_TURMA },
+  { nome: 'Matheus Horacio', frase: FRASE_PADRAO_TURMA },
+  { nome: 'Matheus Rodrigues', frase: FRASE_PADRAO_TURMA },
+  { nome: 'Murilo', frase: FRASE_PADRAO_TURMA },
+  { nome: 'Otavio', frase: FRASE_PADRAO_TURMA },
+  {
+    nome: 'Pablo',
+    frase: 'Muito obrigado mamãe Ilce por todos esses grandes momentos que tivemos juntos e muito obrigado por ainda acreditar em mim.',
+  },
+  { nome: 'Pedro Fernandes', frase: FRASE_PADRAO_TURMA },
+  { nome: 'Pedro do Carmo', frase: FRASE_PADRAO_TURMA },
+  { nome: 'Pietro', frase: FRASE_PADRAO_TURMA },
+  { nome: 'Steffani', frase: FRASE_PADRAO_TURMA },
+  { nome: 'Yasmin', frase: FRASE_PADRAO_TURMA },
+];
 
 function montarMensagensTurma() {
   const lista = document.getElementById('mensagens-lista');

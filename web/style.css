@@ -242,6 +242,24 @@ h1 {
   color: var(--verde);
 }
 
+.piada-if {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: -14px 0 24px;
+  opacity: 0.85;
+  font-style: italic;
+}
+
+.piada-if code {
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--dourado-claro);
+  background: rgba(217, 178, 92, 0.15);
+  padding: 1px 7px;
+  border-radius: 4px;
+}
+
 .botoes {
   display: flex;
   justify-content: center;
