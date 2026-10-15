@@ -1,5 +1,5 @@
 // ===== Mensagens da turma (troque a frase de cada um quando tiver) =====
-const FRASE_PADRAO_TURMA = 'Obrigado(a), professora [NOME DA PROFESSORA], por cada momento.';
+const FRASE_PADRAO_TURMA = 'Obrigado(a), professora Ilce, por cada momento.';
 
 const MENSAGENS_TURMA = [
   { nome: 'Arthur', frase: FRASE_PADRAO_TURMA },
