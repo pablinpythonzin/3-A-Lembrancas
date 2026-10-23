@@ -1,12 +1,15 @@
-GIFs de comemoração usados na versão web, fixos nas beiradas da tela
-(2 na esquerda, 2 na direita — some em telas estreitas):
+GIFs de comemoração usados na versão web. Ficam soltos quicando pela
+tela (estilo logo de DVD) e quicam também na área das mensagens dos
+alunos, pra não tampar as frases. Somem em telas estreitas.
 
-  party.gif          → esquerda, em cima
-  dog_dacing.gif      → esquerda, embaixo
-  cat-meme.gif         → direita, em cima
-  cat-cat-meme.gif      → direita, embaixo
+  party.gif
+  dog_dacing.gif
+  cat-meme.gif
+  cat-cat-meme.gif
+  gato-preto.gif
+  menina-comemorando.gif
 
 Enquanto algum arquivo não existir, a página web mostra um ícone SVG
-no lugar (não quebra o layout). O Python usa os mesmos arquivos.
+no lugar (não quebra o layout).
 
 Dica: prefira GIFs pequenos (menos de 3-4 MB cada) para carregar rápido.

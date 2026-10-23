@@ -415,6 +415,9 @@ function pararMusica() {
 
 // ===== GIFs quicando pela tela (estilo logo de DVD) =====
 const gifsQuicando = [...document.querySelectorAll('.gif-slot')].map((el) => ({ el }));
+// área das mensagens dos alunos: os gifs quicam nela como se fosse uma
+// parede, pra nunca ficarem por cima das frases
+const areaMensagens = document.querySelector('.mensagens-turma');
 const CORES_BATIDA = ['#f0d998', '#2ecc71', '#ff6b6b', '#4dabf7', '#cc5de8', '#ffa94d'];
 let quicandoId = null;
 let ultimoTempo = 0;
@@ -451,6 +454,7 @@ function moverGifs(agora) {
   ultimoTempo = agora;
   const larguraTela = window.innerWidth;
   const alturaTela = window.innerHeight;
+  const area = areaMensagens.getBoundingClientRect();
 
   gifsQuicando.forEach((g) => {
     const tam = g.el.offsetWidth;
@@ -461,11 +465,34 @@ function moverGifs(agora) {
     if (g.x + tam >= larguraTela) { g.x = larguraTela - tam; g.vx = -Math.abs(g.vx); bateu = true; }
     if (g.y <= 0) { g.y = 0; g.vy = Math.abs(g.vy); bateu = true; }
     if (g.y + tam >= alturaTela) { g.y = alturaTela - tam; g.vy = -Math.abs(g.vy); bateu = true; }
+    if (quicarNaArea(g, tam, area)) bateu = true;
     if (bateu) corDeBatida(g);
     g.el.style.transform = `translate(${g.x}px, ${g.y}px)`;
   });
 
   quicandoId = requestAnimationFrame(moverGifs);
+}
+
+// se o gif entrou na área das mensagens, empurra ele pra fora pelo lado
+// mais perto e inverte a direção (também cobre o caso de a página rolar
+// e a área "andar" pra cima do gif)
+function quicarNaArea(g, tam, area) {
+  const dentro =
+    g.x < area.right && g.x + tam > area.left &&
+    g.y < area.bottom && g.y + tam > area.top;
+  if (!dentro) return false;
+
+  const entrouPelaEsquerda = g.x + tam - area.left;
+  const entrouPelaDireita = area.right - g.x;
+  const entrouPorCima = g.y + tam - area.top;
+  const entrouPorBaixo = area.bottom - g.y;
+  const menor = Math.min(entrouPelaEsquerda, entrouPelaDireita, entrouPorCima, entrouPorBaixo);
+
+  if (menor === entrouPelaEsquerda) { g.x = area.left - tam; g.vx = -Math.abs(g.vx); }
+  else if (menor === entrouPelaDireita) { g.x = area.right; g.vx = Math.abs(g.vx); }
+  else if (menor === entrouPorCima) { g.y = area.top - tam; g.vy = -Math.abs(g.vy); }
+  else { g.y = area.bottom; g.vy = Math.abs(g.vy); }
+  return true;
 }
 
 function pararGifsQuicando() {

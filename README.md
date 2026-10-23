@@ -28,9 +28,11 @@ Duas versões equivalentes:
      `frase` do item dele na lista.
 2. **Adicione GIFs de comemoração** (opcional, mas deixa muito mais divertido):
    coloque os arquivos em [`assets/gifs/`](assets/gifs/) — os nomes usados
-   hoje são `party.gif`, `dog_dacing.gif`, `cat-meme.gif` e `cat-cat-meme.gif`
+   hoje são `party.gif`, `dog_dacing.gif`, `cat-meme.gif`, `cat-cat-meme.gif`,
+   `gato-preto.gif` e `menina-comemorando.gif`
    (veja o `LEIA-ME.txt` da pasta). Ficam soltos quicando pelas bordas da tela,
-   igual ao logo de DVD da TV (mudam de cor a cada batida), e somem em
+   igual ao logo de DVD da TV (mudam de cor a cada batida). Eles também quicam na área das
+   mensagens dos alunos, pra nunca tampar as frases. Somem em
    telas estreitas. Sem os arquivos, a
    página mostra um ícone no lugar — nada quebra.
 3. **Adicione uma foto lembrança** em [`assets/fotos/foto-turma.jpg`](assets/fotos/)
@@ -80,7 +82,7 @@ Duas versões equivalentes:
   comemoração, o vídeo de comemoração toca com os fogos de artifício (o
   mesmo som disparado 7x em sequência, bem mais alto que o normal) por
   cima nos primeiros segundos, mostra os cartõezinhos roláveis com
-  mensagem de cada aluno da turma, e os 4 GIFs ficam quicando pela
+  mensagem de cada aluno da turma, e os 6 GIFs ficam quicando pela
   tela, estilo logo de DVD. O botão "Ver de novo" volta pra tela inicial e para
   tudo.
 - A versão Python toca um "tim-tim" de vitória (Windows) e também tem
