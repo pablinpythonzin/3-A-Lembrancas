@@ -111,8 +111,6 @@ const btnAceitar = document.getElementById('btn-sim'); // verde, escrito "SIM!",
 btnFujao.classList.add('btn-fujao');
 
 const CAMINHO_BOOM = '../assets/sons/boom.mp3';
-const CAMINHO_BRUH = '../assets/sons/bruh.mp3';
-const ATRASO_MS = 800; // mesmo atraso usado entre todos os áudios de zoeira
 let ultimaZoeira = 0;
 
 // ===== Tela "toque pra começar": garante um clique de verdade antes de
@@ -121,7 +119,7 @@ let ultimaZoeira = 0;
 const telaBloqueio = document.getElementById('tela-bloqueio');
 
 telaBloqueio.addEventListener('click', () => {
-  [CAMINHO_BOOM, CAMINHO_BRUH].forEach((caminho) => {
+  [CAMINHO_BOOM].forEach((caminho) => {
     const audio = new Audio(caminho);
     audio.volume = 0;
     audio.play().then(() => {
@@ -175,9 +173,6 @@ function tocarZoeira() {
 
   new Audio(CAMINHO_BOOM).play().catch(() => {});
   mostrarImagemZoeira();
-  setTimeout(() => {
-    new Audio(CAMINHO_BRUH).play().catch(() => {});
-  }, ATRASO_MS);
 }
 
 let posicionado = false;
@@ -311,6 +306,10 @@ const telaComemoracao = document.getElementById('tela-comemoracao');
 const btnDeNovo = document.getElementById('btn-de-novo');
 
 const CAMINHO_MUSICA = '../assets/musica/musica-comemoracao.mp4';
+// Never Gonna Give You Up — o YouTube só funciona no site publicado; abrindo
+// o index.html direto do computador (file://) ele dá erro, então lá usa o mp4
+const URL_YOUTUBE =
+  'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&playsinline=1&rel=0';
 const playerMusica = document.getElementById('player-musica');
 
 // ===== Susto do FNAF ao entrar na tela de comemoração =====
@@ -382,6 +381,17 @@ function pararFogos() {
 }
 
 function tocarMusica() {
+  if (location.protocol !== 'file:') {
+    const iframe = document.createElement('iframe');
+    iframe.src = URL_YOUTUBE;
+    iframe.title = 'Never Gonna Give You Up';
+    iframe.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    iframe.allowFullscreen = true;
+    playerMusica.innerHTML = '';
+    playerMusica.appendChild(iframe);
+    return;
+  }
+
   const video = document.createElement('video');
   video.src = CAMINHO_MUSICA;
   video.controls = true;
@@ -400,7 +410,67 @@ function tocarMusica() {
 function pararMusica() {
   const video = playerMusica.querySelector('video');
   if (video) video.pause();
-  playerMusica.innerHTML = '';
+  playerMusica.innerHTML = ''; // tirar o iframe do YouTube já para o som
+}
+
+// ===== GIFs quicando pela tela (estilo logo de DVD) =====
+const gifsQuicando = [...document.querySelectorAll('.gif-slot')].map((el) => ({ el }));
+const CORES_BATIDA = ['#f0d998', '#2ecc71', '#ff6b6b', '#4dabf7', '#cc5de8', '#ffa94d'];
+let quicandoId = null;
+let ultimoTempo = 0;
+
+function iniciarGifsQuicando() {
+  const larguraTela = window.innerWidth;
+  const alturaTela = window.innerHeight;
+  gifsQuicando.forEach((g) => {
+    const tam = g.el.offsetWidth || 160;
+    g.x = Math.random() * Math.max(0, larguraTela - tam);
+    g.y = Math.random() * Math.max(0, alturaTela - tam);
+    const velocidade = 120 + Math.random() * 80; // pixels por segundo
+    const angulo = Math.random() * Math.PI * 2;
+    g.vx = Math.cos(angulo) * velocidade;
+    g.vy = Math.sin(angulo) * velocidade;
+    // garante que ninguém fique andando quase reto (fica sem graça)
+    if (Math.abs(g.vx) < 50) g.vx = 50 * Math.sign(g.vx || 1);
+    if (Math.abs(g.vy) < 50) g.vy = 50 * Math.sign(g.vy || 1);
+  });
+  ultimoTempo = performance.now();
+  cancelAnimationFrame(quicandoId);
+  quicandoId = requestAnimationFrame(moverGifs);
+}
+
+function corDeBatida(g) {
+  const cor = CORES_BATIDA[Math.floor(Math.random() * CORES_BATIDA.length)];
+  g.el.style.borderColor = cor;
+  g.el.style.boxShadow = '0 0 22px ' + cor;
+}
+
+function moverGifs(agora) {
+  // limita o passo pra não "teleportar" se a aba ficar um tempo em segundo plano
+  const dt = Math.min((agora - ultimoTempo) / 1000, 0.05);
+  ultimoTempo = agora;
+  const larguraTela = window.innerWidth;
+  const alturaTela = window.innerHeight;
+
+  gifsQuicando.forEach((g) => {
+    const tam = g.el.offsetWidth;
+    g.x += g.vx * dt;
+    g.y += g.vy * dt;
+    let bateu = false;
+    if (g.x <= 0) { g.x = 0; g.vx = Math.abs(g.vx); bateu = true; }
+    if (g.x + tam >= larguraTela) { g.x = larguraTela - tam; g.vx = -Math.abs(g.vx); bateu = true; }
+    if (g.y <= 0) { g.y = 0; g.vy = Math.abs(g.vy); bateu = true; }
+    if (g.y + tam >= alturaTela) { g.y = alturaTela - tam; g.vy = -Math.abs(g.vy); bateu = true; }
+    if (bateu) corDeBatida(g);
+    g.el.style.transform = `translate(${g.x}px, ${g.y}px)`;
+  });
+
+  quicandoId = requestAnimationFrame(moverGifs);
+}
+
+function pararGifsQuicando() {
+  cancelAnimationFrame(quicandoId);
+  quicandoId = null;
 }
 
 function comemorar() {
@@ -412,6 +482,7 @@ function comemorar() {
   tocarMusica();
   tocarFogos();
   tocarFnaf();
+  iniciarGifsQuicando();
 }
 
 function voltarInicio() {
@@ -421,6 +492,7 @@ function voltarInicio() {
   pararMusica();
   pararFogos();
   pararFnaf();
+  pararGifsQuicando();
 }
 
 btnAceitar.addEventListener('click', comemorar);
